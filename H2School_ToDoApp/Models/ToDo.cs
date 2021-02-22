@@ -8,7 +8,6 @@ namespace H2School_ToDoApp.Models
 {
     public class ToDo
     {
-        [Key]
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
