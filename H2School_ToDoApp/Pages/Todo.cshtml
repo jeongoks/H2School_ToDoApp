@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model H2School_ToDoApp.Pages.TodoModel
 @{
     ViewData["Title"] = "To Do page";
@@ -22,21 +22,35 @@
                     <thead>
                         <tr>
                             <th>
-                                <!-- Add in the Name of the To Do there gets Created -->
-                                <p>Name</p>
+                                @Html.DisplayNameFor(model => model.ToDo[0].Title)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ToDo[0].Description)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ToDo[0].DeadLine) Days
+                            </th>
+                            <th>
+                                Management
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-@foreach (var item in Model.NewToDo)
-{
+@foreach (var item in Model.ToDo) {
                         <tr>
                             <td>
-
+                                <a asp-page="">@Html.DisplayFor(modelItem => item.Title)</a>
+                                
                             </td>
                             <td>
-                                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a> 
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DeadLine)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit">Edit</a> |
+                                <a asp-page="./Delete">Delete</a>
                             </td>
                         </tr>
 }

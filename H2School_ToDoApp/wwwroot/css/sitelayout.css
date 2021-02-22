@@ -30,6 +30,10 @@ hr {
     color: #000000!important;
 }
 
+th, td {
+    color: #fff!important;
+}
+
 textarea.form-control {
     background-color: #333333;
 }

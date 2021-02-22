@@ -5,16 +5,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using H2School_ToDoApp.Models;
+using H2School_ToDoApp.Data;
 
 namespace H2School_ToDoApp.Pages
 {
     public class TodoModel : PageModel
     {
-        public List<ToDo> NewToDo { get; set; }
+        private readonly IRepository _context;        
 
-        public void OnGet()
+        public TodoModel(IRepository context)
         {
+            _context = context;
+        }
 
+        public IList<ToDo> ToDo { get; set; }
+
+        public void OnGet(int id)
+        {
+            ToDo = _context.GetAll();
         }
     }
 }
