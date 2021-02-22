@@ -1,0 +1,60 @@
+﻿header {
+    background-color: #333333;
+}
+
+body {
+    background-color: #222222 !important;
+}
+
+.border {
+    border: 1px solid rgba(0,0,0,.1) !important;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    margin-right: 4px;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+a {
+    color: #DDDDDD;
+}
+
+    a:hover {
+        background-color: #333333;
+        color: #F5FAFA;
+    }
+
+textarea.form-control {
+    background-color: #333333;
+}
+
+label, p {
+    color: #F8F8F8 !important;
+}
+
+input {
+    width: 300px;
+}
+
+.footer-layout {
+    background-size: 100%;
+    background: none repeat scroll 0% 0% #333333;
+    background-clip: padding-box;
+    border-top: 4px solid rgba(0,0,0,.1);
+    padding-top: 4px;
+    bottom: 0;
+    color: #fff;
+    left: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.footer-layout-nav {
+    float: left;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 5px
+}

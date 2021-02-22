@@ -1,0 +1,15 @@
+CRUD - TODO liste
+Noget der er relevant for os
+ - Projekter / Codes
+ - HjemmeProjekter 
+Redigere Værdier
+Slette Værdier
+Lave nye Værdier
+Hvornår et givent punkt er færdiggjort
+ - Slettes
+ - Greyed out
+ - Knap der siger man er færdig med projektet / evt. slette alt
+ 
+Singleton
+Repository
+ToDo Class
