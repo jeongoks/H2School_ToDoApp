@@ -26,6 +26,10 @@ a {
         color: #F5FAFA;
     }
 
+hr {
+    color: #000000!important;
+}
+
 textarea.form-control {
     background-color: #333333;
 }

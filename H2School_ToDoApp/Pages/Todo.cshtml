@@ -3,3 +3,46 @@
 @{
     ViewData["Title"] = "To Do page";
 }
+
+<div class="text-center">
+    <h1>Create, manage and delete your To Do's.</h1>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <a class="btn btn-dark" href="/Create" role="button">Create a To do</a>
+                <hr />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <!-- Add in the Name of the To Do there gets Created -->
+                                <p>Name</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+@foreach (var item in Model.NewToDo)
+{
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a> 
+                            </td>
+                        </tr>
+}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
