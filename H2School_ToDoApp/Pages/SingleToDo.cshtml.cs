@@ -11,7 +11,7 @@ namespace H2School_ToDoApp.Pages
 {
     public class SingleToDoModel : PageModel
     {
-        private IRepository _context;
+        private readonly IRepository _context;
 
         public SingleToDoModel(IRepository context)
         {
@@ -20,9 +20,10 @@ namespace H2School_ToDoApp.Pages
 
         public ToDo ToDo { get; set; }
 
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             ToDo = _context.GetItemById(id);
+            return Page();
         }
     }
 }
