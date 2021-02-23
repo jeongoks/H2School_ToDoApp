@@ -7,7 +7,7 @@ using H2School_ToDoApp.Models;
 
 namespace H2School_ToDoApp.Data
 {
-    public class Repository : IRepository
+    public class Repository : IRepository, ISubRepository
     {
         private List<ToDo> todos;
 
@@ -66,6 +66,30 @@ namespace H2School_ToDoApp.Data
         public void Remove(int id)
         {
             todos.Remove(GetItemById(id));
+        }
+
+
+        public void AddCheckBox(CheckBox checkBox, int toDoId)
+        {
+            checkBox.Id = todos[toDoId].ListOfCheckBox.Max(t => t.Id);
+            ++checkBox.Id;
+            todos[toDoId].ListOfCheckBox.Add(checkBox);
+        }
+
+        public void UpdateCheckBox(CheckBox checkBox, int toDoId)
+        {
+            int index = todos[toDoId].ListOfCheckBox.FindIndex(t => t.Id == checkBox.Id);
+            todos[toDoId].ListOfCheckBox[index] = checkBox;
+        }
+
+        public List<CheckBox> GetAllCheckBox(int toDoId)
+        {
+            return todos[toDoId].ListOfCheckBox;
+        }
+
+        public void RemoveCheckBox(int toDoId)
+        {
+            
         }
     }
 }
