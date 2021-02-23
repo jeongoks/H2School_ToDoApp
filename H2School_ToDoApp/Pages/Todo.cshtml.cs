@@ -20,7 +20,7 @@ namespace H2School_ToDoApp.Pages
 
         public IList<ToDo> ToDo { get; set; }
 
-        public void OnGet(int id)
+        public void OnGet()
         {
             ToDo = _context.GetAll();
         }

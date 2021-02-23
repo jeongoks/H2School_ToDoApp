@@ -1,10 +1,63 @@
 ﻿@page "{id}"
 @model H2School_ToDoApp.Pages.SingleToDoModel
 @{
-
+    ViewData["Title"] = "ToDo CheckBox page";
 }
 
 <div class="text-center">
     <h1>@Model.ToDo.Title</h1>
     <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <a class="btn btn-dark" asp-page="/CreateCheckBox" asp-route-id="@Model.ToDo.Id" role="button">Create a To do</a>
+                <hr />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToDo.ListOfCheckBox[0].Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToDo.ListOfCheckBox[0].Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToDo.ListOfCheckBox[0].Complete)
+                        </th>
+                        <th>
+                            Management
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ToDo.ListOfCheckBox)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Complete)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

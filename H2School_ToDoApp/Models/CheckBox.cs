@@ -9,6 +9,12 @@ namespace H2School_ToDoApp.Models
     {
         public string Title { get; set; }
         public int Id { get; set; }
+        public string Description { get; set; }
         public bool Complete { get; set; }
+
+        public CheckBox()
+        {
+            Complete = false;
+        }
     }
 }
