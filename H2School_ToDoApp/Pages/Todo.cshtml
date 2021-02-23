@@ -39,7 +39,7 @@
 @foreach (var item in Model.ToDo) {
                         <tr>
                             <td>
-                                <a asp-page="">@Html.DisplayFor(modelItem => item.Title)</a>
+                                <a asp-page="./SingleToDo" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a>
                                 
                             </td>
                             <td>
