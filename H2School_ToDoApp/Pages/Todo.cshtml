@@ -31,6 +31,9 @@
                                 @Html.DisplayNameFor(model => model.ToDo[0].DeadLine) Days
                             </th>
                             <th>
+                                @Html.DisplayNameFor(model => model.ToDo[0].Complete) 
+                            </th>
+                            <th>
                                 Management
                             </th>
                         </tr>
@@ -40,13 +43,17 @@
                         <tr>
                             <td>
                                 <a asp-page="./SingleToDo" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a>
-                                
+
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Description)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.DeadLine)
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(modelItem => item.Complete, new {@disabled="disabled"})
+                                
                             </td>
                             <td>
                                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
