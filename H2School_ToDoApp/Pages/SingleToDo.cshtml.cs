@@ -21,7 +21,7 @@ namespace H2School_ToDoApp.Pages
         public ToDo ToDo { get; set; }
 
         public IActionResult OnGet(int id)
-        {
+       {
             ToDo = _context.GetItemById(id);
             return Page();
         }

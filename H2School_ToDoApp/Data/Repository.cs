@@ -13,10 +13,14 @@ namespace H2School_ToDoApp.Data
 
         public Repository()
         {
-            todos = new List<ToDo>
+            if (todos == null)
             {
-                new ToDo{ Id=0, Title="Shopping List", Description="Listing down what I need to buy at the store.", DeadLine=2}
-            };
+                todos = new List<ToDo>
+                {
+                    new ToDo{ Id=0, Title="Shopping List", Description="Down what to buy", DeadLine=2}
+                };
+            }
+                
         }
 
         /// <summary>
@@ -38,6 +42,9 @@ namespace H2School_ToDoApp.Data
         {
             int index = todos.FindIndex(t => t.Id == newTodo.Id);
             todos[index].Title = newTodo.Title;
+            todos[index].Description = newTodo.Description;
+            todos[index].DeadLine = newTodo.DeadLine;
+            todos[index].Complete = newTodo.Complete;
         }
 
         /// <summary>

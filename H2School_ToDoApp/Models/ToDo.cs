@@ -12,12 +12,14 @@ namespace H2School_ToDoApp.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public int DeadLine { get; set; }
+        public bool Complete { get; set; }
 
         public List<CheckBox> ListOfCheckBox { get; set; }
 
         public ToDo()
         {
             ListOfCheckBox = new List<CheckBox>();
+            Complete = false;
         }
     }
 }
