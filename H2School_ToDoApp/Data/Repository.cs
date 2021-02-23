@@ -38,6 +38,8 @@ namespace H2School_ToDoApp.Data
         {
             int index = todos.FindIndex(t => t.Id == newTodo.Id);
             todos[index].Title = newTodo.Title;
+            todos[index].Description = newTodo.Description;
+            todos[index].DeadLine = newTodo.DeadLine;
         }
 
         /// <summary>
