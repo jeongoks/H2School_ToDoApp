@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - H2School_ToDoApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/sitelayout.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Portfolio</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <div class="border-right border-dark">
+                    <a class="nav-link border" asp-area="" asp-page="/Index">Home</a>
+                    <a class="nav-link border" asp-area="" asp-page="/ToDo">To Dos</a>
+                    <a class="nav-link border" asp-area="" asp-page="/Contact">Contact</a>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-layout">
+        <div class="container fadein">
+            <div class="row text-center">
+                <ul class="footer-layout-nav">
+                    <li>
+                        <p>&copy; @DateTime.Now.Year - To Do Project - <a asp-area="" asp-page="/Contact">Contact me</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

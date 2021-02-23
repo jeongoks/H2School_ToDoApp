@@ -1,0 +1,40 @@
+﻿@page
+@model H2School_ToDoApp.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Got any questions or ideas?</h1>
+    <p>Under here you can let me know if you have any sort of inputs, ideas or tips.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md text-center">
+                <form class="form-group" method="post" asp-page="Success">
+                    <label>Enter email: </label>
+                    <input placeholder="Enter Email..."/> <br>
+                    <label>Enter name: </label>
+                    <input placeholder="Enter First Name..."/> <br>
+                    <label>Enter number: </label>
+                    <input placeholder="Enter Number..."/>
+                    <div class="row">
+                        <div class="col-md">
+                            <textarea class="form-control" rows="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <br />
+                            <button class="btn btn-dark" name="Submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
