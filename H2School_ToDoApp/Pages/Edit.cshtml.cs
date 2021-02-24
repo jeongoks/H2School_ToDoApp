@@ -39,8 +39,8 @@ namespace H2School_ToDoApp.Pages
 
         public IActionResult OnPost()
         {
+            // Updating the values in our ToDo List.
             _context.Update(ToDo);
-
             return RedirectToPage("./ToDo");
         }
 

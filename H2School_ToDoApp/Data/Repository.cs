@@ -47,6 +47,7 @@ namespace H2School_ToDoApp.Data
         /// <param name="newTodo"></param>
         public void Update(ToDo newTodo)
         {
+            // Remember to add all of the Objects in from the List, to be able to Edit them.
             int index = todos.FindIndex(t => t.Id == newTodo.Id);
             todos[index].Title = newTodo.Title;
             todos[index].Description = newTodo.Description;
@@ -103,12 +104,22 @@ namespace H2School_ToDoApp.Data
             todos[toDoId].ListOfCheckBox.Add(checkBox);
         }
 
+        /// <summary>
+        /// This is where we update a specific CheckBox.
+        /// </summary>
+        /// <param name="checkBox"></param>
+        /// <param name="toDoId"></param>
         public void UpdateCheckBox(CheckBox checkBox, int toDoId)
         {
             int index = todos[toDoId].ListOfCheckBox.FindIndex(t => t.Id == checkBox.Id);
             todos[toDoId].ListOfCheckBox[index] = checkBox;
         }
 
+        /// <summary>
+        /// Here we're retrieving all of our CheckBoxes.
+        /// </summary>
+        /// <param name="toDoId"></param>
+        /// <returns></returns>
         public List<CheckBox> GetAllCheckBox(int toDoId)
         {
             return todos[toDoId].ListOfCheckBox;

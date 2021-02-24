@@ -23,6 +23,7 @@ namespace H2School_ToDoApp.Pages
 
         public IActionResult OnGet(int? id)
         {
+            // Checking if the Id or To Do is null or not.
             if (id == null)
             {
                 return NotFound();
@@ -47,6 +48,7 @@ namespace H2School_ToDoApp.Pages
 
             ToDo = _context.GetItemById(id);
 
+            // If ToDo isn't the same as null, then Remove it from the ToDo List
             if (ToDo != null)
             {
                 _context.Remove(ToDo.Id);
