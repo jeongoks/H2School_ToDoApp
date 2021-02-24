@@ -13,3 +13,6 @@ Hvornår et givent punkt er færdiggjort
 Singleton
 Repository
 ToDo Class
+
+Deadline -> Datetime Calender
+

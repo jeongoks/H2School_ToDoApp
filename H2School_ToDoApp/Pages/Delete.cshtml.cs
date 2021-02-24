@@ -21,7 +21,6 @@ namespace H2School_ToDoApp.Pages
         [BindProperty]
         public ToDo ToDo { get; set; }
 
-
         public IActionResult OnGet(int? id)
         {
             if (id == null)

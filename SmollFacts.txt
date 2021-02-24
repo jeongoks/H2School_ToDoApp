@@ -1,0 +1,7 @@
+asp-validation-summary : hvad vi gerne vil validere op imod
+asp-validation-for : der hvor vi ønsker at kontrollen skal ske
+
+singleton : 	for at få adgang til det interface man har lavet i sin Data folder
+		skal laves gennem noget Model Binding
+		skal ligges indeunder services sin Startup.cs 
+		services.AddSingleton<>

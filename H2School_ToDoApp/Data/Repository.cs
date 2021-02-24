@@ -17,10 +17,9 @@ namespace H2School_ToDoApp.Data
             {
                 todos = new List<ToDo>
                 {
-                    new ToDo{ Id=0, Title="Shopping List", Description="Down what to buy", DeadLine=2}
+                    new ToDo{ Id=0, Title="Shopping List", Description="Ingridients to Pitabread", DeadLine=2}
                 };
             }
-                
         }
 
         /// <summary>
@@ -29,9 +28,17 @@ namespace H2School_ToDoApp.Data
         /// <param name="newTodo"></param>
         public void Create(ToDo newTodo)
         {
-            newTodo.Id = todos.Max(t => t.Id);
+            if (todos.Count == 0)
+            {
+                newTodo.Id = 0;
+            }
+            else
+            {
+                newTodo.Id = todos.Max(t => t.Id);
+            }
             ++newTodo.Id;
             todos.Add(newTodo);
+
         }
 
         /// <summary>
@@ -76,6 +83,11 @@ namespace H2School_ToDoApp.Data
         }
 
 
+        /// <summary>
+        /// This is where we Add a Check Box to our List of Checkboxs in ToDo
+        /// </summary>
+        /// <param name="checkBox"></param>
+        /// <param name="toDoId"></param>
         public void AddCheckBox(CheckBox checkBox, int toDoId)
         {
             if (todos[toDoId].ListOfCheckBox.Count != 0)

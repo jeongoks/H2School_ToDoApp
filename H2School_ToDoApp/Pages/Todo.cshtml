@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md">
-                <table class="table">
+                <table class="table table-striped table-dark table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>
@@ -28,7 +28,7 @@
                                 @Html.DisplayNameFor(model => model.ToDo[0].Description)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.ToDo[0].DeadLine) Days
+                                @Html.DisplayNameFor(model => model.ToDo[0].DeadLine)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.ToDo[0].Complete) 
@@ -46,14 +46,13 @@
 
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Description)
+                                @Html.DisplayTextFor(modelItem => item.Description)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.DeadLine)
                             </td>
                             <td>
                                 @Html.CheckBoxFor(modelItem => item.Complete, new {@disabled="disabled"})
-                                
                             </td>
                             <td>
                                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

@@ -42,7 +42,7 @@ label, p {
     color: #F8F8F8 !important;
 }
 
-input {
+.input-width {
     width: 300px;
 }
 
